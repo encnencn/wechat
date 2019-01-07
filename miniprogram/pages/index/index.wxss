@@ -12,8 +12,8 @@
   margin: 0 auto;
   width: 300rpx;
   height: 200rpx;
-}
-/* page {
+} 
+ /* page {
   background: #f6f6f6;
   display: flex;
   flex-direction: column;
@@ -147,4 +147,4 @@
   font-size: 24rpx;
   line-height: 36rpx;
   word-break: break-all;
-} */
+}  */
