@@ -3,7 +3,7 @@
 
   <view class="page-body">
     <view class="page-section page-section-spacing swiper">
-      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <swiper class="swiper-cl" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
         <block wx:for="{{background}}" wx:key="*this">
           <swiper-item>
             <view class="swiper-item {{item}}"></view>
@@ -11,9 +11,10 @@
         </block>
       </swiper>
     </view>
-    <view class="page-section" style="margin-top: 40rpx;margin-bottom: 0;">
+    <view class="page-section" style="margin-top: 10rpx;margin-bottom: 0;">
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_switch">
+          <image src="/images/icon_sound_HL.png" class="image image-sound"/>
           <view class="weui-cell__bd">最新消息</view>
           <view class="weui-cell__ft">
 

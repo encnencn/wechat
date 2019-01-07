@@ -106,7 +106,7 @@ form{
 
 .page-section{
   width: 100%;
-  margin-bottom: 60rpx;
+  margin-bottom: 5rpx;
 }
 .page-section_center{
   display: flex;
@@ -122,7 +122,7 @@ form{
 }
 .page-section-spacing{
   box-sizing: border-box;
-  padding: 0 80rpx;
+  padding: 0 5rpx;
 }
 .page-section-title{
   font-size: 28rpx;
@@ -135,9 +135,7 @@ form{
   padding-left: 0;
   padding-right: 0;
 }
-.page-section-ctn{
 
-}
 
 /* widget */
 .btn-area{

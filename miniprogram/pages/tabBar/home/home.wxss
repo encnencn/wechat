@@ -11,7 +11,7 @@ button:last-child{
 }
 .swiper-item{
   display: block;
-  height: 150px;
+  height: 200px;
 }
 .page-section-title{
   margin-top: 60rpx;
@@ -55,4 +55,15 @@ button:last-child{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.page-section-spacing{
+   height: 200px;
+}
+.swiper-cl{
+   height: 200px;
+}
+.image-sound{
+   width: 23px;
+  height: 23px;
+  margin-right: 10px;
 }

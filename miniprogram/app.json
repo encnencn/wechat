@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/tabBar/home/home",
+    "pages/tabBar/workTable/workTable",
     "pages/index/index",
     
     "pages/userConsole/userConsole",
@@ -30,7 +31,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/tabBar/home/home",
+        "pagePath": "pages/tabBar/workTable/workTable",
         "iconPath": "images/icon_edit.png",
         "selectedIconPath": "images/icon_edit_HL.png",
         "text": "工作台"
