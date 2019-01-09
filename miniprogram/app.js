@@ -1,4 +1,5 @@
 //app.js
+var bsurl = require('utils/bsurl.js');
 App({
   onLaunch: function () {
     
@@ -9,7 +10,27 @@ App({
         traceUser: true,
       })
     }
-
+    wx.setStorageSync('hasLogin', false),
+     
     this.globalData = {}
+  },
+  mine: function () {
+    var that = this;
+    wx.request({
+      url: bsurl + 'mine_xcx',
+      success: function (res) {
+        that.globalData.user = res.data;
+        wx.setStorageSync('user', res.data);
+        wx.setStorageSync('hasLogin', true);
+      }
+    })
+  },
+ 
+  globalData: {
+    hasLogin: false,
+    hide: false,
+    list_am: [],
+    cookie: "",
+    user: {}
   }
 })

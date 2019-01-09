@@ -1,4 +1,4 @@
-// miniprogram/pages/tabBar/workTable/workTable.js
+// pages/tabBar/message/message.js
 Page({
 
   /**
@@ -12,12 +12,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (wx.getStorageSync('hasLogin')==false){
+    if (wx.getStorageSync('hasLogin') == false) {
       wx.navigateTo({
-        url: '../../login/login?t=1'
+        url: '../../login/login?t=2'
       })
     }
-   
   },
 
   /**
