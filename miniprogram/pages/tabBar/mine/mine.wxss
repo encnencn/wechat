@@ -32,6 +32,7 @@
 .user .user-info{
   flex: 5;
   text-align: left;
+  height: 200rpx;
 }
 .user .user-info text{
   display: block;
@@ -88,5 +89,7 @@
   display: inline-block;
   width: 40rpx;
   height: 45rpx;
-  float: right;
+}
+.my-off{
+  margin-bottom: 60%;
 }

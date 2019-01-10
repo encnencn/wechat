@@ -33,7 +33,7 @@
 				{
 					"id": -1,
 					"name": "home",
-					"pathName": "pages/tabBar/home/home"
+					"pathName": "pages/tabBar/mine/mine"
 				}
 			]
 		}
