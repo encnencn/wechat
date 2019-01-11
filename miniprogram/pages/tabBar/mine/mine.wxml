@@ -27,7 +27,7 @@
         <text>更改头像</text>
       </view>
     </view>
-    <view class="my-item flex-wrp my-off">
+    <view class="my-item flex-wrp my-off" bindtap="bindOffTap">
       <view class="myitem-icon flex-item" >
         <image src="../../../images/off.png"></image>
       </view>

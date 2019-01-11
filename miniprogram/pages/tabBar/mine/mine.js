@@ -1,5 +1,6 @@
 // pages/tabBar/mine/mine.js
-var app = getApp()
+var bsurl = require('../../../utils/bsurl.js');
+var app = getApp();
 Page({
 
   /**
@@ -25,7 +26,7 @@ Page({
          that.setData({
            userInfo: userInfo
          })
-         console.log(userInfo)
+         
        })
      }
   
@@ -90,5 +91,47 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  /**
+   * 绑定注销按钮
+   */
+  bindOffTap:function(){
+    var that = this
+    wx.showModal({
+      title: '注销',
+      content: '是否确认注销登录？',
+      success(res) {
+        if (res.confirm) {
+          
+          wx.request({
+            url: bsurl + 'wx/logout',
+            method: "POST",
+            data:{
+              token: app.globalData.userInfo.token
+            },
+            success: function (res) {
+              if (res.data.code == 200) {
+                app.globalData.userInfo = null;
+                wx.clearStorageSync()
+                that.setData({
+                  userInfo: null
+                })
+                //that.onLoad();
+                app.onLaunch();
+                //  wx.navigateTo({
+                //    url: '../mine/mine'
+                //  })
+
+               
+              }
+             
+            }
+          })
+
+        } else if (res.cancel) {
+          
+        }
+      }
+    })
+  },
 })

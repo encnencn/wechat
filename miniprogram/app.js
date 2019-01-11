@@ -14,23 +14,7 @@ App({
      
     this.globalData = {}
   },
-  mine: function () {
-    var that = this;
-    wx.request({
-      url: bsurl + 'wx/mine',
-      method: "POST",
-      success: function (res) {
-        if(res.data.code!=200){
-          wx.navigateTo({
-            url: 'pages/login/login?t=3'
-          })
-        }
-        that.globalData.userInfo = res.data.userInfo;
-        wx.setStorageSync('userInfo', res.data.userInfo);
-        wx.setStorageSync('hasLogin', true);
-      }
-    })
-  },
+ 
  
   globalData: {
     hasLogin: false,
