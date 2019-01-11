@@ -25,14 +25,14 @@
 .user .userinfo-avatar{
   flex: 1;
   display: inline-block;
-  width: 100rpx;
-  height: 100rpx;
+  width: 150rpx;
+  height: 150rpx;
   border-radius: 80rpx;
 }
 .user .user-info{
   flex: 5;
   text-align: left;
-  height: 200rpx;
+  height: 150rpx;
 }
 .user .user-info text{
   display: block;
@@ -81,6 +81,9 @@
 .flex-wrp{
   display: flex;
 }
+.user .flex-wrp{
+  height: 25%;
+}
 .flex-item{
   flex-grow: 1;
   text-align: center;
@@ -91,5 +94,5 @@
   height: 45rpx;
 }
 .my-off{
-  margin-bottom: 60%;
+  margin-bottom: 65%;
 }

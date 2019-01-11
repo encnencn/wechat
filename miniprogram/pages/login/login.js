@@ -38,19 +38,20 @@ Page({
       })
       return false;
     }
-    var url =  "loginCheck_xcx"
+    var url =  "wx/login"
     wx.showToast({
       title: '登录中...',
       icon: 'loading'
     })
     wx.request({
       url: bsurl + url,
+      method: "POST",
       data: {
         username: that.data.phone,
         password: md5.hexMD5(that.data.pwd)//
       },
       complete: function (res) {
-        console.log(res);
+       
         wx.hideToast();
         if (res.data.code != 200) {
           wx.showModal({
@@ -59,8 +60,12 @@ Page({
           })
           return;
         }
-        app.mine();
-        console.log("linktype" + that.data.linktype);
+      
+        app.globalData.userInfo = res.data.userInfo;
+        wx.setStorageSync('userInfo', res.data.userInfo);
+        wx.setStorageSync('hasLogin', true);
+
+        
         if (that.data.linktype == 1) {
           wx.switchTab({
             url: '../tabBar/workTable/workTable'

@@ -17,10 +17,16 @@ App({
   mine: function () {
     var that = this;
     wx.request({
-      url: bsurl + 'mine_xcx',
+      url: bsurl + 'wx/mine',
+      method: "POST",
       success: function (res) {
-        that.globalData.user = res.data;
-        wx.setStorageSync('user', res.data);
+        if(res.data.code!=200){
+          wx.navigateTo({
+            url: 'pages/login/login?t=3'
+          })
+        }
+        that.globalData.userInfo = res.data.userInfo;
+        wx.setStorageSync('userInfo', res.data.userInfo);
         wx.setStorageSync('hasLogin', true);
       }
     })
@@ -31,6 +37,18 @@ App({
     hide: false,
     list_am: [],
     cookie: "",
-    user: {}
-  }
+    userInfo: {}
+  },
+
+  getUserInfo: function (cb) {
+    var that = this
+    if (this.globalData.userInfo) {
+      typeof cb == "function" && cb(this.globalData.userInfo)
+    } else {
+      //调用登录接口
+      this.mine();
+      typeof cb == "function" && cb(this.globalData.userInfo)
+    }
+  },
+ 
 })

@@ -1,4 +1,5 @@
 // pages/tabBar/mine/mine.js
+var app = getApp()
 Page({
 
   /**
@@ -12,11 +13,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // if (wx.getStorageSync('hasLogin') == false) {
-    //   wx.navigateTo({
-    //     url: '../../login/login?t=3'
-    //   })
-    // }
+     if (wx.getStorageSync('hasLogin') == false) {
+       wx.navigateTo({
+         url: '../../login/login?t=3'
+       })
+     }else{
+       var that = this
+       //调用应用实例的方法获取全局数据
+       app.getUserInfo(function (userInfo) {
+         //更新数据
+         that.setData({
+           userInfo: userInfo
+         })
+         console.log(userInfo)
+       })
+     }
+  
+   
+  
   },
 
   /**
@@ -30,7 +44,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (wx.getStorageSync('hasLogin') == true) {
+     
+      var that = this
+      //调用应用实例的方法获取全局数据
+      app.getUserInfo(function (userInfo) {
+        //更新数据
+        that.setData({
+          userInfo: userInfo
+        })
+      })
+    }
   },
 
   /**
